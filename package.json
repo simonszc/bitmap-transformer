@@ -2,7 +2,7 @@
   "name": "bitmap-transformer",
   "version": "1.0.0",
   "description": "",
-  "main": "transformer.js",
+  "main": "gulpfile.js",
   "directories": {
     "test": "test"
   },
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/simonszc/bitmap-transformer.git"
   },
-  "author": "zach",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/simonszc/bitmap-transformer/issues"
@@ -23,6 +23,7 @@
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-eslint": "^2.0.0",
-    "gulp-mocha": "^2.2.0"
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5"
   }
 }

@@ -61,10 +61,7 @@ describe('transformer', () => {
       pixelStart: transformer.transBuffer.readUInt32LE(10),
       colorDepth: transformer.transBuffer.readUInt16LE(28)
     };
-    expect(results.type).to.equal(expected.type);
-    expect(results.size).to.equal(expected.size);
-    expect(results.pixelStart).to.equal(expected.pixelStart);
-    expect(results.colorDepth).to.equal(expected.colorDepth);
+    expect(results).to.deep.equal(expected);
   })
   it('red and green values from the transformed buffer should match', () => {
     let expected = {
@@ -75,15 +72,6 @@ describe('transformer', () => {
       green: transformer.transBuffer.readUInt8(85),
       red: transformer.transBuffer.readUInt8(86)
     }
-    expect(results.green).to.equal(expected.green);
-    expect(results.red).to.equal(expected.red);
+    expect(results).to.deep.equal(expected);
   })
-
-  // it('should do a thing', (done) => {
-  //   transformer((data) => {
-  //     console.log(data.slice(55, 56), bits.slice(55,56))
-  //     expect(data.slice(55, 56)).to.eql(bits.slice(55, 56));
-  //     done();
-  //   })
-  // })
 })

@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
 
-gulp.task('default', ['runmocha', 'runlint', 'watch'], () => {
+gulp.task('default', ['runmocha', 'runlint'], () => {
   console.log('ran mocha/chai and lint');
 });
 
@@ -58,8 +58,4 @@ gulp.task('runlint', () => {
 gulp.task('runmocha', () => {
   return gulp.src('./test/test.js')
   .pipe(mocha());
-});
-
-gulp.task('watch', () => {
-  gulp.watch('./*', ['runmocha', 'runlint']);
 });

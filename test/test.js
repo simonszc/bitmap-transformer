@@ -27,25 +27,21 @@ describe('transformer', () => {
   it('buffer should be the size its header declares', () => {
     let results = transformer.headers.size;
     let expected = buffer.length;
-    console.log('buffer size: ' + results + 'bytes');
     expect(results).to.eql(expected);
   })
   it('values from the pixels array should match', () => {
     let expected = [buffer.readUInt8(84), buffer.readUInt8(85), buffer.readUInt8(86)];
     let results = [transformer.pixels[10].blue, transformer.pixels[10].green, transformer.pixels[10].red];
-    console.log('tenth pixel: ' + results + ' (BGR out of 255)');
     expect(results).to.eql(expected);
   })
   it('red and green values from the transformed pixels array should match', () => {
     let expected = [buffer.readUInt8(85), buffer.readUInt8(86)];
     let results = [transformer.transPixels[10].green, transformer.transPixels[10].red];
-    console.log('transformed tenth pixel: ' + results + ' (GR out of 255)');
     expect(results).to.eql(expected);
   })
   it('blue values from the transformed pixels array should be 0', () => {
     let expected = buffer.readUInt8(84) * 0;
     let results = transformer.transPixels[10].blue;
-    console.log('transformed tenth pixel: ' + results + '(B out of 255)');
     expect(results).to.equal(expected);
   })
   it('new buffer headers should be the same as the old headers', () => {

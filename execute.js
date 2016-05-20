@@ -1,3 +1,5 @@
+#!/usr/local/codefellows/401/week1/bitmap-transformer
+
 const fs = require('fs');
 const transformer = require('./lib/transformer');
 
